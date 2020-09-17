@@ -1,4 +1,39 @@
-.propImg {
-  height: 250px;
+.card-img-wrapper{
+  overflow: hidden; /* image will stay within its box */
+  position: relative; /* for the position absolute to work correctly on member-icons class */
+}
 
+.card-img-wrapper:hover .member-icons{
+  bottom: 0; /* overrides the -30% and shows the buttons */
+  opacity: 1; /* the icons are at full capacity */
+}
+.card:hover img{
+  transform: scale(1.2, 1.2); /* the actual image itself is a little smaller than the box it is in; so 1.2 makes the image take up that extra space around it */
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  height: 250px;
+  opacity: .5; /* makes the image "dimmer" so that the buttons on the image look brighter*/
+}
+
+.card img{  /* hover off of the iamge */
+  transform: scale(1, 1); /* scale back to 1 when the hover is off teh iamge */
+  transition-duration: 500ms; /* does it slowly so the user can see it happening */
+  transition-timing-function: ease-out;
+  height: 250px;
+}
+
+.member-icons {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  /* the margin setup will center the icons */
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0; /* the icons are invisible at start */
+}
+
+
+.animate{
+  transition: all 0.3s ease-in-out; /* the buttons will pop-out in 0.3s for the user to notice */
 }
