@@ -18,7 +18,10 @@ const appRoutes: Routes  = [
   {path: '', component: PropertyListComponent},
   {path: 'rent-property', component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
-  {path: 'property-detail/:id', component: PropertyDetailComponent}
+  {path: 'property-detail/:id', component: PropertyDetailComponent},
+
+  //The ** is for catching bad URLs and redirecting teh user to a specific page of your choice
+  {path: '**', component: PropertyListComponent}
 ]
 
 @NgModule({

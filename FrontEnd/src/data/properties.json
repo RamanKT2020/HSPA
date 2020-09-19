@@ -1,26 +1,57 @@
 [
   {
     "Id": 1,
+    "SellRent": 1,
     "Name": "Birla House1",
     "Type": "House",
-    "Price": 1001
+    "Price": 1001,
+    "Image": "prop-1"
   },
   {
     "Id": 2,
-    "Name": "My Condo",
+    "SellRent": 1,
+    "Name": "My Condo2",
     "Type": "Condo",
-    "Price": 1002
+    "Price": 1002,
+    "Image": "prop-2"
   },
   {
     "Id": 3,
-    "Name": "My Apt",
+    "SellRent": 1,
+    "Name": "My Apt3",
     "Type": "Apartment",
-    "Price": 1003
+    "Price": 1003,
+    "Image": "prop-3"
   },
   {
     "Id": 4,
-    "Name": "My Town Home",
+    "SellRent": 1,
+    "Name": "Town Home4",
     "Type": "TownHome",
-    "Price": 1004
+    "Price": 1004,
+    "Image": "prop-4"
+  },
+  {
+    "Id": 5,
+    "SellRent": 2,
+    "Name": "Town Home5",
+    "Type": "TownHome",
+    "Price": 1005,
+    "Image": "prop-5"
+  },
+  {
+    "Id": 6,
+    "SellRent": 2,
+    "Name": "Town Home6",
+    "Type": "TownHome",
+    "Price": 1006,
+    "Image": "prop-6"
+  },
+  {
+    "Id": 7,
+    "SellRent": 1,
+    "Name": "Town Home7",
+    "Type": "TownHome",
+    "Price": 1007
   }
 ]
