@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    Add Property
+    List your property
   </div>
 
   <div class="card-body">
@@ -9,31 +9,46 @@
     <!-- the commented code passes Form, whereas the uncommented one doesn't-->
     <!--<form (ngSubmit)='onSubmit(Form)' #Form='ngForm'> -->
     <form (ngSubmit)='onSubmit()' #Form='ngForm'>
-      <div class="form-group col-12">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" #propName="ngModel"
-          ngModel name="Name" required minlength="5">
-        <span *ngIf="!propName.valid && propName.touched" class="error-block">
-          <span *ngIf="propName.errors.required">Please provide name.</span>
-          <span *ngIf="propName.errors.minlength">Name must be at least 5 char long.</span>
 
-        </span>
+      <div>
+        <tabset #formTabs>
+          <tab heading="Basic Info">
+
+            <div class="form-group col-12">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" #propName="ngModel"
+                ngModel name="Name" required minlength="5">
+              <span *ngIf="!propName.valid && propName.touched" class="error-block">
+                <span *ngIf="propName.errors.required">Please provide name.</span>
+                <span *ngIf="propName.errors.minlength">Name must be at least 5 char long.</span>
+
+              </span>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="type">Type</label>
+              <input type="text" class="form-control" ngModel name="Type">
+            </div>
+
+            <div class="form-group col-12">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" ngModel name="Price">
+            </div>
+
+            <div class="form-group col-12">
+              <button type="button" class="btn btn-primary btn-block" (click)="selectTab(1)">Next</button>
+            </div>
+
+          </tab>
+          <tab heading="Pricing and Area Info">Pricing Information</tab>
+          <tab heading="Address">Address</tab>
+          <tab heading="Other Details">Other Details</tab>
+          <tab heading="Photos">Upload Photos</tab>
+        </tabset>
       </div>
 
-      <div class="form-group col-12">
-        <label for="type">Type</label>
-        <input type="text" class="form-control" ngModel name="Type">
-      </div>
 
-      <div class="form-group col-12">
-        <label for="price">Price</label>
-        <input type="text" class="form-control" ngModel name="Price">
-      </div>
 
-      <div class="form-group col-12">
-        <button type="submit" class="btn btn-primary mr-2">Save</button>
-        <button type="reset" class="btn btn-primary">Cancel</button>
-      </div>
 
     </form>
   </div>
