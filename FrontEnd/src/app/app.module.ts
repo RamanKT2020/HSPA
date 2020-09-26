@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+//import { Buttons } from 'ngx-bootstrap/buttons'; //not transpiling
 
 
 import { AppComponent } from './app.component';
@@ -57,6 +58,7 @@ const appRoutes: Routes  = [
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot()
+    //Buttons.forRoot() //not transpiling
   ],
   providers: [HousingService
               , UserService

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
 
+
 @Component({
   selector: 'app-add-property',
   templateUrl: './add-property.component.html',
