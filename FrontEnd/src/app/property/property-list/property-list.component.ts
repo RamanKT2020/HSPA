@@ -1,9 +1,12 @@
 import { ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+
+
 import { HousingService } from 'src/app/services/housing.service';
 //import { Console } from 'console';
-import {IProperty} from '../IProperty.interface';
+//import {IProperty} from '../IProperty.interface';
+import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 @Component({
   selector: 'app-property-list',
@@ -12,7 +15,7 @@ import {IProperty} from '../IProperty.interface';
 })
 export class PropertyListComponent implements OnInit {
   SellRent = 1;
-  properties: Array<IProperty>;
+  properties: Array<IPropertyBase>;
 
   constructor(private route: ActivatedRoute, private housingService: HousingService) { }
 

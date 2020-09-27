@@ -1,3 +1,6 @@
+.card {
+  min-height: 400px; /* will not expand and shrink at run time */
+}
 .card-img-wrapper{
   overflow: hidden; /* image will stay within its box */
   position: relative; /* for the position absolute to work correctly on member-icons class */
