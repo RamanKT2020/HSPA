@@ -9,42 +9,49 @@
       <div class="card-body">
         <!-- In-built validators: https://angular.io/api/forms/Validators -->
 
-        <!-- the commented code passes Form, whereas the uncommented one doesn't-->
+        <!-- the first commented code passes Form, whereas the second one doesn't-->
         <!--<form (ngSubmit)='onSubmit(Form)' #Form='ngForm'> -->
-        <form (ngSubmit)='onSubmit()' #Form='ngForm'>
+        <!--  <form (ngSubmit)='onSubmit()' #Form='ngForm'> this was template-driven approach-->
+        <form (ngSubmit)='onSubmit()' [formGroup]="addPropertyForm">
 
           <div>
             <div class="tab-panel">
               <tabset class="member-tabset" #formTabs>
 
-                <tab heading="Basic Info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup">
+                <tab heading="Basic Info" formGroupName="BasicInfo">
 
                   <div class="form-group col-12">
                     <p>I want to</p>
-                    <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
+                    <div class="btn-group" btnRadioGroup formControlName="SellRent">
                       <label class="btn btn-outline-primary mr-2"
                       btnRadio=1 role="button" name="SellRent">Sell</label>
 
                       <label class="btn btn-outline-primary"
                       btnRadio=2 role="button" name="SellRent">Rent</label>
                     </div>
+                    <div class="error-block" *ngIf="SellRent.invalid && nextClicked">
+                          Please select Sell or Rent
+                    </div>
                   </div>
 
                   <div class="form-group col-12">
                     <p>BHK</p>
-                    <div class="btn-group" btnRadioGroup name="BHK"
-                        [(ngModel)]="propertyView.BHK">
+                    <div class="btn-group" btnRadioGroup formControlName="BHK"
+                        [(ngModel)]="propertyView.BHK" [ngModelOptions]="{standalone: true}">
                       <label
                         *ngFor="let bhk of [1, 2, 3, 4]"
                         class="btn btn-outline-primary mr-2"
                         [btnRadio]="bhk" role="button" name="BHK">{{bhk}}</label>
                     </div>
+                    <div class="error-block" *ngIf="BHK.invalid && nextClicked">
+                      Please select BHK
+                </div>
                   </div>
 
 
                   <div class="form-group col-12">
                     <p>Property Type</p>
-                    <div class="btn-group" btnRadioGroup name="propType"
+                    <div class="btn-group" formControlName="propType"
                         [(ngModel)]="propertyView.PType">
 
                       <label
@@ -56,8 +63,8 @@
 
                   <div class="form-group col-12">
                     <p>Furnish Type</p>
-                    <div class="btn-group" btnRadioGroup
-                      [(ngModel)]="propertyView.FType" name="Ftype">
+                    <div class="btn-group"
+                      [(ngModel)]="propertyView.FType" formControlName="Ftype">
                       <label
                         *ngFor="let ftype of furnishTypes"
                         class="btn btn-outline-primary mr-2"
@@ -69,7 +76,7 @@
                   <div class="form-group col-12">
                     <label for="name">in Building/Project/Society</label>
                     <input type="text" class="form-control" #propName="ngModel"
-                      ngModel name="Name" required minlength="5"
+                       name="Name" required minlength="5"
                       [(ngModel)]="propertyView.Name">
                       <span *ngIf="!propName.valid && propName.touched" class="error-block">
                         <span *ngIf="propName.errors.required">Please provide name.</span>
@@ -85,12 +92,12 @@
 
                   <div class="form-group col-12">
                     <button type="button" class="btn btn-primary btn-block"
-                    (click)="selectTab(1)" [disabled]="!BasicInfo.valid">Next</button>
+                    (click)="selectTab(1)" >Next</button>
                   </div>
 
                 </tab>
 
-                <tab heading="Pricing and Area Info">
+                <tab heading="Pricing and Area Info" formGroupName="PriceInfo">
                   Pricing Information
 
                   <div class="form-group col-12">
@@ -123,6 +130,7 @@
                   <button type="button" class="btn btn-primary btn-block"
                   (click)="selectTab(2)">Next</button>
 
+                  <!-- [disabled]= "BasicInfo.invalid"  way to use this in reactive forms-->
                   <button type="button" class="btn btn-primary btn-block"
                   (click)="selectTab(0)">Back</button>
                 </tab>
@@ -168,6 +176,9 @@
                         class="btn btn-outline-primary mr-2"
                         [btnRadio]="rtm" role="button" name="RTM">{{rtm}}</label>
                     </div>
+                    <div class="error-block" *ngIf="RTM.invalid && nextClicked" >
+                        Please select Ready-to-move
+                    </div>
                   </div>
 
                   <div class="form-group col-3">
@@ -191,6 +202,7 @@
                         class="btn btn-outline-primary mr-2"
                         [btnRadio]="gc" role="button" name="GC">{{gc}}</label>
                     </div>
+
                   </div>
 
                   <div class="form-group col-12">
