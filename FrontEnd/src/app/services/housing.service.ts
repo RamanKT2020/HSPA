@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 //import { IProperty } from '../property/IProperty.interface';
 import { IPropertyBase } from 'src/app/model/ipropertybase'
+import { Property } from '../model/property';
 
 
 @Injectable({
@@ -31,5 +32,9 @@ constructor(private http:HttpClient) { }
 
     )
 
+  }
+
+  addProperty(property: Property) {
+    localStorage.setItem('newProp', JSON.stringify(property));
   }
 }

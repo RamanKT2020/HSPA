@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
 //import { IProperty } from 'src/app/model/iproperty';
 import { IPropertyBase } from 'src/app/model/ipropertybase';
+import { Property } from 'src/app/model/property';
+import { AlertifyService } from 'src/app/services/alertify.service';
+import { HousingService } from 'src/app/services/housing.service';
 //import { IProperty } from '../IProperty.interface';
 
 
@@ -20,6 +23,7 @@ export class AddPropertyComponent implements OnInit {
 
   addPropertyForm: FormGroup;
   nextClicked: boolean;
+  property = new Property();
 
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex'];
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished'];
@@ -40,7 +44,9 @@ export class AddPropertyComponent implements OnInit {
 
   constructor(
       private fb: FormBuilder,
-      private router : Router) { }
+      private router : Router,
+      private housingService: HousingService,
+      private alertify: AlertifyService) { }
 
   ngOnInit() {
       this.CreateAddPropertyForm();
@@ -172,7 +178,7 @@ export class AddPropertyComponent implements OnInit {
   get MainEntrance() {
     return this.OtherInfo.controls.MainEntrance as FormControl;
   }
-  get APO() {
+  get AOP() {
     return this.OtherInfo.controls.AOP as FormControl;
   }
   get Description() {
@@ -197,18 +203,53 @@ onBack() {
 
 onSubmit() {
 
+
   this.nextClicked = true;
 
   console.log('onSubmit invoked');
 
   if (this.allTabsValid()) {
-    console.log('Congrats, form submitted!');
-    console.log('SellRent=' + this.addPropertyForm.value.BasicInfo.SellRent);
+    this.mapProperty();
+    this.housingService.addProperty(this.property);
+    this.alertify.success('Congrats, form submitted!');
+    this.alertify.success('SellRent=' + this.addPropertyForm.value.BasicInfo.SellRent);
+
+    if (this.SellRent.value === '2'){
+      this.router.navigate(['/rent-property']);
+    } else {
+      this.router.navigate(['/']);
+    }
   } else {
-    console.log('Please review the form and provide all valid entries');
+    this.alertify.error('Please review the form and provide all valid entries');
   }
   console.log(this.addPropertyForm);
 
+}
+
+
+mapProperty(): void {
+  this.property.SellRent = +this.SellRent.value; //+: convert to number
+  this.property.BHK = this.BHK.value;
+  this.property.PType = this.PType.value;
+  this.property.Name = this.Name.value;
+  this.property.City = this.City.value;
+  this.property.FType = this.FType.value;
+  this.property.Price = this.Price.value;
+  this.property.Security = this.Security.value;
+  this.property.Maintenance = this.Maintenance.value;
+  this.property.BuiltArea = this.BuiltArea.value;
+  this.property.CarpetArea = this.CarpetArea.value;
+  this.property.FloorNo = this.FloorNo.value;
+  this.property.TotalFloor = this.TotalFloor.value;
+  this.property.Address = this.Address.value;
+  this.property.Address2 = this.Landmark.value;
+  this.property.RTM = this.RTM.value;
+  this.property.AOP = this.AOP.value;
+  this.property.Gated = this.Gated.value;
+  this.property.MainEntrance = this.MainEntrance.value;
+  this.property.Possession = this.PossessionOn.value;
+  this.property.Description = this.Description.value;
+  this.property.PostedOn = new Date().toString();
 }
 
 allTabsValid(): boolean {
