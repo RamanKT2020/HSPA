@@ -228,6 +228,8 @@ onSubmit() {
 
 
 mapProperty(): void {
+  this.property.Id = this.housingService.newPropId();
+
   this.property.SellRent = +this.SellRent.value; //+: convert to number
   this.property.BHK = this.BHK.value;
   this.property.PType = this.PType.value;
