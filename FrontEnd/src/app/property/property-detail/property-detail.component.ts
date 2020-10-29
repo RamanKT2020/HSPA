@@ -21,26 +21,26 @@ export class PropertyDetailComponent implements OnInit {
   ngOnInit() {
     this.propertyId = Number(this.route.snapshot.params['id']);
 
-    //to react to a change in parameters, but no change to the component being used
-    this.route.params.subscribe(
-        (params) => {
-          this.propertyId = Number(params['id']);
-          this.housingService.getProperty(this.propertyId).subscribe(
-            (data: Property) => {
-              this.property = data;
-              // this.property.Name = data.Name;
-              // this.property.BHK = data.BHK;
-              // this.property.PType = data.PType;
-              // this.property.FType = data.FType;
-              // this.property.BuiltArea = data.BuiltArea;
-              // this.property.CarpetArea = data.CarpetArea;
-              // this.property.City = data.City;
-              // this.property.Price = data.Price;
-            }
-          );
-
-        }
+    this.route.data.subscribe(
+      (data: Property) => {
+        this.property = data['prp'];
+      }
     )
+
+    //  code below not needed because we are using the resolver prp
+
+    //to react to a change in parameters, but no change to the component being used
+    // this.route.params.subscribe(
+    //     (params) => {
+    //       this.propertyId = Number(params['id']);
+    //       this.housingService.getProperty(this.propertyId).subscribe(
+    //         (data: Property) => {
+    //           this.property = data;
+    //           // this.property.Name = data.Name; //to illustrate passing value to just one item
+    //         }, error => this.router.navigate(['/'])
+    //       );
+    //    }
+    //)
   }
 
   //onSelecNext() {
