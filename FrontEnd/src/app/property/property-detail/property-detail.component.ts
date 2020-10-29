@@ -27,14 +27,15 @@ export class PropertyDetailComponent implements OnInit {
           this.propertyId = Number(params['id']);
           this.housingService.getProperty(this.propertyId).subscribe(
             (data: Property) => {
-              this.property.Name = data.Name;
-              this.property.BHK = data.BHK;
-              this.property.PType = data.PType;
-              this.property.FType = data.FType;
-              this.property.BuiltArea = data.BuiltArea;
-              this.property.CarpetArea = data.CarpetArea;
-              this.property.City = data.City;
-              this.property.Price = data.Price;
+              this.property = data;
+              // this.property.Name = data.Name;
+              // this.property.BHK = data.BHK;
+              // this.property.PType = data.PType;
+              // this.property.FType = data.FType;
+              // this.property.BuiltArea = data.BuiltArea;
+              // this.property.CarpetArea = data.CarpetArea;
+              // this.property.City = data.City;
+              // this.property.Price = data.Price;
             }
           );
 
