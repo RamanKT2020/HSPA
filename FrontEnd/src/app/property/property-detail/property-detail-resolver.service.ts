@@ -19,7 +19,7 @@ resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
     const propId  = route.params['id'];
     return this.housingService.getProperty(+propId).pipe(
       catchError(error => {
-          this.router.navigate['/'];
+          this.router.navigate(['/']);
           return of(null);
       })
     );

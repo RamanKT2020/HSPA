@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxGalleryImage } from '@kolkov/ngx-gallery/lib/ngx-gallery-image';
+import { NgxGalleryOptions } from '@kolkov/ngx-gallery/lib/ngx-gallery-options';
+import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+
 import { Property } from 'src/app/model/property';
 import { HousingService } from 'src/app/services/housing.service';
 
@@ -12,7 +16,8 @@ export class PropertyDetailComponent implements OnInit {
 
   public propertyId: number;
   property = new Property();
-
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
 
   constructor(private route : ActivatedRoute,
               private router: Router,
@@ -26,6 +31,8 @@ export class PropertyDetailComponent implements OnInit {
         this.property = data['prp'];
       }
     )
+
+
 
     //  code below not needed because we are using the resolver prp
 
@@ -41,6 +48,42 @@ export class PropertyDetailComponent implements OnInit {
     //       );
     //    }
     //)
+
+    this.galleryOptions = [
+      {
+        width: '100%',
+        height: '465px',
+        thumbnailsColumns: 4,
+        imageAnimation: NgxGalleryAnimation.Slide
+      }
+    ];
+
+    this.galleryImages = [
+      {
+        small: 'assets/images/GI1.png',
+        medium: 'assets/images/GI1.png',
+        big: 'assets/images/GI1.png'
+      },
+      {
+        small: 'assets/images/GI2.png',
+        medium: 'assets/images/GI2.png',
+        big: 'assets/images/GI2.png'
+      },
+      {
+        small: 'assets/images/GI3.png',
+        medium: 'assets/images/GI3.png',
+        big: 'assets/images/GI3.png'
+      },{
+        small: 'assets/images/GI4.png',
+        medium: 'assets/images/GI4.png',
+        big: 'assets/images/GI4.png'
+      },
+      {
+        small: 'assets/images/GI5.png',
+        medium: 'assets/images/GI5.png',
+        big: 'assets/images/GI5.png'
+      }
+    ];
   }
 
   //onSelecNext() {
@@ -53,4 +96,7 @@ export class PropertyDetailComponent implements OnInit {
     //  this.route was used to demonstrate the feature
     //this.router.navigate(['property-detail', this.propertyId], { relativeTo: this.route })
   //}
+
+
+
 }

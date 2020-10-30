@@ -20,7 +20,8 @@ constructor(private http:HttpClient) { }
   getProperty(id: number) {
     return this.getAllProperties().pipe(
       map(propertiesArray => {
-        throw new Error("Some error"); // to replicate a random error when accessing the database
+        //console.log("Just before throwing error");
+        //throw new Error("Some error"); // to replicate a random error when accessing the database
         return propertiesArray.find(p => p.Id === id);
       })
     );
