@@ -1,5 +1,26 @@
+<label>Filter City: &nbsp;</label>
+<input [(ngModel)]='City'>
+<button type="button" (click)="onCityFilter()">Search</button>
+<button type="button" (click)="onCityFilterClear()">Clear</button>
+
+
+&nbsp;&nbsp;
+
+<label>Sort by: &nbsp;</label>
+<select [(ngModel)]='SortByParam'>
+  <option value="City" selected>City</option>
+  <option value="Price">Price</option>
+</select>
+<button type="button" (click)="onSortDirection()">
+  <i *ngIf="SortDirection==='asc'" class="fas fa-sort-alpha-down"></i>
+  <i *ngIf="SortDirection==='desc'" class="fas fa-sort-alpha-up"></i>
+</button>
+
 <div class="row"> <!-- allows you to multiple cards -->
-  <div *ngFor="let property of properties" class="shadow-lg col-sm-4 p-3">  <!-- adds a large-size shadow; 3 columns per row as bootstrap has 12 columns; 3 pixel padding -->
-    <app-property-card [property]="property"></app-property-card>
+  <!-- adds a large-size shadow; 3 columns per row as bootstrap has 12 columns; 3 pixel padding -->
+  <!-- <div *ngFor="let property of properties|filter:'':'City'|sort:['City']" class="shadow-lg col-sm-4 p-3"> -->
+  <!-- <div *ngFor="let property of properties|filter:'New York':'City'|sort:['City','desc']" class="shadow-lg col-sm-4 p-3">  -->
+  <div *ngFor="let property of properties|filter:SearchCity:'City'|sort:[SortByParam,SortDirection]" class="shadow-lg col-sm-4 p-3">  <!-- adds a large-size shadow; 3 columns per row as bootstrap has 12 columns; 3 pixel padding -->
+      <app-property-card [property]="property"></app-property-card>
   </div>
 </div>
