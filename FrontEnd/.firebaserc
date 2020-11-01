@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hspa-raman": {
+      "hosting": {
+        "my-first-app": [
+          "hspa-raman"
+        ]
+      }
+    }
+  }
+}

@@ -119,6 +119,10 @@
               "devServerTarget": "my-first-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
