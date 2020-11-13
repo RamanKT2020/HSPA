@@ -17,6 +17,12 @@ export class HousingService {
 
 constructor(private http:HttpClient) { }
 
+  //It is the devloper's responsibility to ensure that the return type from the
+  // api call matches the http.get's return type
+  getAllCities(): Observable<string[]> {
+    return this.http.get<string[]>("http://localhost:5000/api/city");
+  }
+
   getProperty(id: number) {
     return this.getAllProperties().pipe(
       map(propertiesArray => {

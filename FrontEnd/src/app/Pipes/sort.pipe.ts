@@ -26,9 +26,9 @@ export class SortPipe implements PipeTransform {
           return 0;
         }
       });
-    }
 
-    return value;
+      return value;
+    }
   }
 
 }
