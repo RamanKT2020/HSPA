@@ -122,10 +122,19 @@
 
                   <div class="form-group col-12">
                     <label>City</label>
-                    <input type="text"
-                    class="form-control"
-                    formControlName="City"
-                    [(ngModel)]="propertyView.City">
+                    <select
+                      class="form-control"
+                      formControlName="City"
+                      [(ngModel)]="propertyView.City">
+                      <!--
+                        You've to set the City property to an empty string in the ts file for "Select City" to show
+                        The html "selected" doesn't work in the select tag when formControlName or ngModel is used
+                      -->
+                      <option value="">-- Select City --</option>
+                      <option *ngFor="let city of cityList" value={{city}}>
+                        {{city}}
+                      </option>
+                    </select>
                     <div class="error-block"
                     *ngIf="City.invalid && (nextClicked || City.touched)">
                       Please select city

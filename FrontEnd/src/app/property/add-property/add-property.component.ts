@@ -39,7 +39,7 @@ export class AddPropertyComponent implements OnInit {
     FType: null,
     BHK: null,
     BuiltArea: null,
-    City: null,
+    City: '', // the html has a select tag associated with this property. By setting this to an empty string, the default "-- Select City --" will be shown
     RTM: null
 
   };
