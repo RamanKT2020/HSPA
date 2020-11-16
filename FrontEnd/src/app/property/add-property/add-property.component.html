@@ -131,8 +131,8 @@
                         The html "selected" doesn't work in the select tag when formControlName or ngModel is used
                       -->
                       <option value="">-- Select City --</option>
-                      <option *ngFor="let city of cityList" value={{city}}>
-                        {{city}}
+                      <option *ngFor="let city of cityList" value={{city.id}}>
+                        {{city.name}}
                       </option>
                     </select>
                     <div class="error-block"
