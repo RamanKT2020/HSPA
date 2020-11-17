@@ -25,7 +25,7 @@ export class AddPropertyComponent implements OnInit {
   nextClicked: boolean;
   property = new Property();
 
-  cityList: string[];
+  cityList: any[];
 
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex'];
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished'];
