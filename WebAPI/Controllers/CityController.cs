@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.Data.Repo;
+
 using WebAPI.Interfaces;
 using WebAPI.Models;
-//using WebAPI.Models;
+
 
 namespace WebAPI.Controllers
 {
