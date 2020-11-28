@@ -8,7 +8,12 @@ using WebAPI.Data.Dtos;
 using WebAPI.Interfaces;
 using WebAPI.Models;
 
+/*
+    A couple of issues with this controller:
 
+    1. It doesn't use plurality in URLs "GET api/city" instead of "GET api/Cities"
+    2. The URLs have api/city/post for adding a city. "post" in the URL is redundant as you would be making a POST request to add
+*/
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -67,6 +72,31 @@ namespace WebAPI.Controllers
             await uow.SaveAsync();
             return StatusCode(201);
         }
+
+        
+        // post api/city/update
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCity(int id, CityDto cityDto)
+        {
+            var cityFromDb = await uow.CityRepository.FindCity(id);
+            cityFromDb.LastUpdatedBy = 1;
+            cityFromDb.LastUpdatedOn = DateTime.Now;
+            mapper.Map(cityDto, cityFromDb);
+            await uow.SaveAsync();
+            return StatusCode(200);
+        }
+
+        [HttpPut("updateCityName/{id}")]
+        public async Task<IActionResult> UpdateCity(int id, CityUpdateDto cityUpdateDto)
+        {
+            var cityFromDb = await uow.CityRepository.FindCity(id);
+            cityFromDb.LastUpdatedBy = 1;
+            cityFromDb.LastUpdatedOn = DateTime.Now;
+            mapper.Map(cityUpdateDto, cityFromDb);
+            await uow.SaveAsync();
+            return StatusCode(200);
+        }
+
 
         // delete api/city/delete/10
         [HttpDelete("delete/{id}")]

@@ -15,5 +15,7 @@ namespace WebAPI.Interfaces
 
         //This should be in UnitOfWork
         //  Task<bool> SaveAsync();
+
+        Task<City> FindCity(int id);
     }
 }
