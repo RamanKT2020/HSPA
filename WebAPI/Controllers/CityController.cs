@@ -78,10 +78,22 @@ namespace WebAPI.Controllers
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateCity(int id, CityDto cityDto)
         {
+            //Show minimal information to a potential hacker
+            if (id != cityDto.Id)
+                return BadRequest("Update not allowed.");
+
             var cityFromDb = await uow.CityRepository.FindCity(id);
+
+            //Show minimal information to a potential hacker
+            if (cityFromDb == null)
+                return BadRequest("Update not allowed.");
+
             cityFromDb.LastUpdatedBy = 1;
             cityFromDb.LastUpdatedOn = DateTime.Now;
             mapper.Map(cityDto, cityFromDb);
+
+            throw new Exception("Some unpredictable exception.");
+
             await uow.SaveAsync();
             return StatusCode(200);
         }

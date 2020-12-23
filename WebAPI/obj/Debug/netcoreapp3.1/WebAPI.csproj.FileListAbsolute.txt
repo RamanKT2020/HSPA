@@ -5,7 +5,6 @@ C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\We
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.exe
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.deps.json
 C:\Users\raman\source\PublicRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\WebAPI.runtimeconfig.json
@@ -61,3 +60,4 @@ C:\Users\raman\source\PublicRepos\Angular\HSPA\webapi\bin\Debug\netcoreapp3.1\ru
 C:\Users\raman\source\PublicRepos\Angular\HSPA\webapi\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
 C:\Users\raman\source\PublicRepos\Angular\HSPA\webapi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\raman\source\PublicRepos\Angular\HSPA\webapi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\raman\source\PublicRepos\Angular\HSPA\webapi\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebAPI.styles.css

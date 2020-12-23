@@ -5795,11 +5795,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\webapi\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "c:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\webapi\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\raman\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\raman\\source\\PublicRepos\\Angular\\HSPA\\webapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raman\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5814,6 +5814,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5825,6 +5826,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
@@ -5867,7 +5869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
