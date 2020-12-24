@@ -44,8 +44,10 @@ namespace WebAPI
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            //app.ConfigureExceptionHandler(env);
-            app.UseMiddleware<ExceptionMiddleware>();
+            app.ConfigureExceptionHandler(env);
+
+            //if you ever need to use the built-in handler. However, the custome one above gives you so much more
+            //app.ConfigureBuiltInExceptionHandler(env); 
             
             app.UseRouting();
 
