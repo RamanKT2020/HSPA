@@ -124,3 +124,4 @@ C:\Users\raman\del_source\GitRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\W
 C:\Users\raman\del_source\GitRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\raman\del_source\GitRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Users\raman\del_source\GitRepos\Angular\HSPA\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
+C:\Users\raman\del_source\GitRepos\Angular\HSPA\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

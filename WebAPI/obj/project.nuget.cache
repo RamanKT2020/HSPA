@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "39fbESD6O0t8prfNa6rijzTVL4uFQFJe1losH/t9Au1Z5GwAvcZX8rEIxLdxmerpl7mCnInusvPRNvIgDuo6mA==",
+  "dgSpecHash": "UKQ8+GHYGt3v8EGSkURiHJfzkzHLQfIFRphUGTEGa5MWUi39vrBbjjK3x8g67892F5BS3U0em5pBpe2HEFjn6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\raman\\del_source\\GitRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raman\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\raman\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\raman\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\raman\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\raman\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\raman\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

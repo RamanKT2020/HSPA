@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Data.Dtos;
 using WebAPI.Interfaces;
@@ -16,6 +17,7 @@ using WebAPI.Models;
 */
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class CityController : BaseController
     {
         private readonly IUnitOfWork uow;
@@ -27,6 +29,8 @@ namespace WebAPI.Controllers
             this.mapper = mapper;
         }
 
+
+        [AllowAnonymous]
         // get api/city
         [HttpGet("")]
         public async Task<IActionResult> GetCities()
@@ -92,7 +96,7 @@ namespace WebAPI.Controllers
             cityFromDb.LastUpdatedOn = DateTime.Now;
             mapper.Map(cityDto, cityFromDb);
 
-            throw new Exception("Some unknown error occured.");
+            //throw new Exception("Some unknown error occured.");
 
             await uow.SaveAsync();
             return StatusCode(200);
