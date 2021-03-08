@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,8 +35,13 @@ namespace WebAPI
         // The order of services doesn't matter
         public void ConfigureServices(IServiceCollection services)
         {
+            var builder = new SqlConnectionStringBuilder(
+                Configuration.GetConnectionString("Default"));
+            //builder.Password = Configuration.GetSection("DBPassword").Value; //commented out because password is not in connection string
+            var connectionString = builder.ConnectionString;
+
             services.AddDbContext<DataContext>(options => 
-                options.UseSqlServer(Configuration.GetConnectionString("Default")));
+                options.UseSqlServer(connectionString));
             services.AddControllers();
             services.AddCors();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
