@@ -23,6 +23,21 @@ namespace WebAPI.Controllers
 
         }
 
+
+        //api/account/register
+        [HttpPost("register")]
+        public async Task<IActionResult> Register(LoginReqDto loginReq)
+        {
+            if (await uow.UserRepository.UserAlreadyExists(loginReq.UserName))
+            {
+                return BadRequest("A user already exists with that name; please try a different user name.");
+            }
+
+            uow.UserRepository.Register(loginReq.UserName, loginReq.Password);
+            await uow.SaveAsync();
+            return StatusCode(201); // record successfully added
+        }
+
         //api/account/login
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginReqDto loginReq)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UKQ8+GHYGt3v8EGSkURiHJfzkzHLQfIFRphUGTEGa5MWUi39vrBbjjK3x8g67892F5BS3U0em5pBpe2HEFjn6w==",
+  "dgSpecHash": "hpJvwfXLMhHcanbDXEnIMuwlico5l9HBBx1O3mnfuMMY845wAE7LFTV/PHmbwCrQv7Do/RqN1Y6esYWEGHnrbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\raman\\del_source\\GitRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\raman\\del_source\\GitRepos\\HSPA\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raman\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\raman\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

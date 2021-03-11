@@ -5826,11 +5826,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raman\\del_source\\GitRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\raman\\del_source\\GitRepos\\HSPA\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\raman\\del_source\\GitRepos\\Angular\\HSPA\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\raman\\del_source\\GitRepos\\HSPA\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\raman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raman\\del_source\\GitRepos\\Angular\\HSPA\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\raman\\del_source\\GitRepos\\HSPA\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\raman\\AppData\\Roaming\\NuGet\\NuGet.Config",
