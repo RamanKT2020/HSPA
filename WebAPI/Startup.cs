@@ -77,6 +77,10 @@ namespace WebAPI
             
             app.UseRouting();
 
+            app.UseHsts(); //instructs browser to use HTTPS only
+            app.UseHttpsRedirection(); //Redirects http traffic to https
+
+
             app.UseCors(m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthentication();
